@@ -39,7 +39,7 @@ class StoryNode:
     right: StoryNode = None
     bottom: StoryNode = None
 
-    end: tuple = None
+    end: str = None
 
     @classmethod
     def _from_yaml(cls, loader, node):
