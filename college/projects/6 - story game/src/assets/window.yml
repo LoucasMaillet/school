@@ -1,0 +1,118 @@
+# Here is defined our UI
+---
+:title: C H I P S
+:iconbitmap: assets/img/chips.ico
+:geometry: 1000x500-42+42
+:loadfont: assets\fonts\PixeloidSans.ttf
+:resizable:
+    width: No
+    height: No
+
+# Hiddens
+
+_TransparentColor: &TransparentColor "#000105" # Choosen color to be transparent
+_ButtonImg: &ButtonImg
+    :type: ImgButton
+    :mode: keep
+    :hidebg: *TransparentColor
+
+    .active:
+        :place: {relwidth: .09, relheight: .09}
+
+    .unactive: &ButtonImgDefault
+        :: 
+            - place: {relwidth: .1, relheight: .1}
+
+    .hide:
+        :place: {relx: -1, rely: -1}
+
+    <<: *ButtonImgDefault
+
+# Widgets
+
+main:
+    :type: Frame
+    :pack: {padx: 20, pady: 10, fill: both, expand: True}
+
+    name:
+        :type: Label
+        :text: Default name
+        :place: {relx: 1, rely: 0, anchor: ne}
+        :font: [Pixeloid Sans, 16]
+
+    dialog:
+        .over:
+            :font: [Pixeloid Sans, 24]
+            :fg: red
+
+        .default: &DDefault
+            :font: [Pixeloid Sans, 16]
+            :fg: black
+
+        :type: Label
+        :text: Default dialog
+        :place: {relx: .5, rely: .5, relwidth: .8, relheight: .8, anchor: center}
+        :wraplength: 600
+        <<: *DDefault
+        
+    button:
+        :type: Frame
+        :place: {relx: 1, rely: 1, anchor: se}
+
+        _Button: &Button
+            .active: &ButtonDefault
+                :fg: black
+
+            .unactive:
+                :fg: grey
+
+            :type: Button
+            :font: [Pixeloid Sans, 12]
+            :pack: {side: right}
+            <<: *ButtonDefault
+            
+        next:
+            .over:
+                :text: Quit
+
+            .default: &NDefault
+                :text: Next
+
+            <<: [*Button, *NDefault]
+
+        previous:
+            .over:
+                :text: Restart
+
+            .default: &PDefault
+                :text: Previous
+            
+            <<: [*Button, *PDefault]
+
+top:
+    .default: &TDefault
+        :place: {relx: .5, rely: .05, anchor: center}
+
+    :file: assets/img/arrow/top.png
+    <<: [*ButtonImg, *TDefault]
+
+left:
+    .default: &LDefault
+        :place: {relx: .05, rely: .5, anchor: center}
+
+    :file: assets/img/arrow/left.png
+    <<: [*ButtonImg, *LDefault]
+
+right:
+    .default: &RDefault
+        :place: {relx: .95, rely: .5, anchor: center}
+
+    :file: assets/img/arrow/right.png
+    <<: [*ButtonImg, *RDefault]
+
+bottom:
+    .default: &BDefault
+        :place: {relx: .5, rely: .95, anchor: center}
+
+    :file: assets/img/arrow/bottom.png
+    <<: [*ButtonImg, *BDefault]

@@ -1,0 +1,72 @@
+name: Ton daron
+dialog:
+    - Ouai <...> tu peux aller vite fait acheter un packet de chips pour l'apéro de ce soir ?
+    - Je te fais confience pour retrouver ton chemin. Oublie pas que tu peux pas revenir en arrière tant que tu n'as pas les chips!
+
+top:
+    name: Ta chambre
+    dialog:
+        - Vous entrez dans votre chambre mais entendez votre pere monter les marches
+
+    bottom:
+        name: Ton daron
+        dialog:
+            - Tu te moque de moi ? Tu n'obei pas ? T'ES PUNI
+
+        end: The Daronned end
+
+
+    left:
+        name: La Fenêtre
+        dialog:
+            - (Tu vois ton chat entrer dans le cabanon avec un bruit bizarre)
+        
+        top:
+            name: La fenêtre mais pas vraiment genre plus un velux
+            dialog:
+            - (en entendant votre pere rugire deriere vous il ne reste qu'une solution)
+            - (La fuite strategique)
+            - (c'est un peu lache mais bon le MJ ne juge aucune action)
+            - (et on a pas le budget pour le senario et l'equipe de relecture)
+            
+            end : vous sautez par la fenetre, mais la poubelle est trop sur la droite (le plus important c'est pas la chute c'est l'atterissage)
+    right:
+        name: Le Plakard
+        dialog:
+            - (Un monde incroyable souvre a vos yeux ébahis)
+            - (Ah non c'est juste un poster)
+        end: pour sortir du plakard vous tombez dans les backrooms (dommage pour vous elon vous attends)
+    
+left:
+    name: Le jardin
+    dialog:
+        - Votre chat se trouve devant vous
+        - MIOU MIOU
+
+    bottom:
+        name: Le ChAt
+        dialog:
+            - (Vous suivez votre chat au fond du jardin)
+            
+        top:
+            name: Le cabannon
+            dialog:
+                - (vous trouvez une tronconeuze en marche)
+                - (votre chat monte sur une etagere)
+                - (malheuresement il glisse et tombe sur la tronconeuze)
+                - (heurezement il lui reste 8 vies)
+            
+            end: La fin trauma + psy
+
+        right:
+            name: Rick Ashley
+            dialog:
+                - (You find Rick)
+                - Never gonna give you up, never gonna let you down...
+
+            end: You let down Rick
+
+bottom:
+    name: Antoine Daniel
+    dialog:
+        - L U I G I
